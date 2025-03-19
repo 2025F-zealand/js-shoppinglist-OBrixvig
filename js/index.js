@@ -2,25 +2,27 @@
 console.log("Shoppinglist")
 
 // Opgave 1
-function createNewLi(text){
+function createNewLi(text, liId, liClass){
     let newLi = document.createElement("li");
 
-    newLi.setAttribute("id", "list");
+    newLi.setAttribute("id", liId);
 
-    newLi.setAttribute("class", "healthy");
+    newLi.setAttribute("class", liClass);
 
     const textNode = document.createTextNode(text);
     newLi.appendChild(textNode);
 
-    return newLi;
+
+
+    return AppendToList("list",newLi);
 }
 
 // Opgave 2
-function AddLiToElement(){
-    
+function AppendToList(listId, elementToAppend){
+    document.getElementById(listId).append(elementToAppend)
 }
 
-
+createNewLi("smør", 5, "healty")
 
 
 
